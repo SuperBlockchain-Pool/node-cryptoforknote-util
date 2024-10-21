@@ -28,10 +28,10 @@
                 ]
             },
             "cflags_c":  [
-                "-fno-exceptions -std=gnu11 -march=native -fPIC -DNDEBUG -Ofast -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
+                "-fno-exceptions -O0 -fno-strict-aliasing -fno-common -fwrapv -std=gnu11 -march=native -fPIC -DNDEBUG -Ofast -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
             ],
             "cflags_cc": [
-                "-fexceptions -frtti -std=c++17 -march=native -fPIC -DNDEBUG -Ofast -s -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
+                "-fexceptions -O0 -fno-strict-aliasing -fno-common -fwrapv -frtti -std=c++17 -march=native -fPIC -DNDEBUG -Ofast -s -funroll-loops -fvariable-expansion-in-unroller -ftree-loop-if-convert-stores -fmerge-all-constants -fbranch-target-load-optimize2"
             ],
             "xcode_settings": {
                 "OTHER_CFLAGS": [ "-fexceptions -frtti" ]
