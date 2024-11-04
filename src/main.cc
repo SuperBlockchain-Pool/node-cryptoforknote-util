@@ -178,8 +178,6 @@ NAN_METHOD(convert_blob_2) { // (parentBlockBuffer, cnBlobType)
     if (!parse_and_validate_block_from_blob(input, b))
         return THROW_ERROR_EXCEPTION("Failed to parse block");
 
-    output = get_block_hashing_blob(b);
-
     v8::Local<v8::Value> returnValue = Nan::CopyBuffer((char*)output.data(), output.size()).ToLocalChecked();
     info.GetReturnValue().Set(
         returnValue
