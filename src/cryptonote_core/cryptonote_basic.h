@@ -936,6 +936,7 @@ namespace cryptonote
     crypto::cycle40 cycle40;
     crypto::cycle48 cycle48;
     crypto::signature signature;
+    uint8_t algorithm;
 
     BEGIN_SERIALIZE()
       VARINT_FIELD(major_version)
@@ -953,6 +954,7 @@ namespace cryptonote
           if (!typename Archive<W>::is_saving()) nonce = nonce32;
         }
       }
+      if (blob_type == BLOB_TYPE_CRYPTONOTE_KRB) VARINT_FIELD(algorithm)
       if (blob_type == BLOB_TYPE_CRYPTONOTE_XTNC || blob_type == BLOB_TYPE_CRYPTONOTE_CUCKOO) FIELD(cycle)
       if (blob_type == BLOB_TYPE_CRYPTONOTE_TUBE) FIELD(cycle40)
       if (blob_type == BLOB_TYPE_CRYPTONOTE_XTA) FIELD(cycle48)
